@@ -2,17 +2,12 @@ import Usuario from '../Usuario';
 import './style.css'
 
 
-function ListaUsuarios(){
+function ListaUsuarios({usuarios, onEliminar, onActualizar}){
     return (
         <div className="lista-usuarios">
-            <Usuario usuario={
-                {
-                 name : "Sebas",
-                 lastName : "Alarcon",
-                 type : "Admin",
-                 photoUrl: "https://live.staticflickr.com/8478/29142086241_e81d6facfa_c.jpg",
-
-            }} />
+            {
+                usuarios.map((usuario, index) => <Usuario key ={index} usuario= {usuario} onEliminar ={onEliminar} onActualizar={onActualizar}/>)
+            }
           
         </div>
     )
