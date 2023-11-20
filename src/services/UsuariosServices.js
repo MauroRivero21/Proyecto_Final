@@ -1,25 +1,21 @@
-import axios from "axios"
-
+import axios from "axios";
 
 const BASE_URL = "http://localhost:8080/users";
 
-function getUsuarios(){
-    return axios.get(BASE_URL)
-};
-
-
-function eliminarPorId(id){
-    return axios.delete(`${BASE_URL}/${id}`);
+function getUsuarios() {
+  return axios.get(BASE_URL);
 }
 
-
-function crearUsuario(user){
-    return axios.post(BASE_URL, user);
+function eliminarPorId(id) {
+  return axios.delete(`${BASE_URL}/${id}`);
 }
 
-function actualizarUsuario(usuario){
-    return axios.put(`${BASE_URL}/${usuario.id}` , usuario)
+function crearUsuario(usuario) {
+  return axios.post(BASE_URL, usuario);
 }
 
+function actualizarUsuario(usuario) {
+  return axios.put(`${BASE_URL}/${usuario.id}`, usuario);
+}
 
-export {getUsuarios, eliminarPorId,crearUsuario, actualizarUsuario};
+export { getUsuarios, eliminarPorId, crearUsuario, actualizarUsuario };
